@@ -2,10 +2,12 @@ import express from 'express';
 import router from './router/portfolio.router.js';
 import connectDB from './lib/db-connect.js';
 import { config } from 'dotenv';
+import cors from 'cors';
 
 config()
 let app = express();
 const port = process.env.PORT;
+app.use(cors());
 
 connectDB()
 
